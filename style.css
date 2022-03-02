@@ -1,0 +1,161 @@
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box;
+    overflow: hidden; */
+}
+p{
+    
+    text-align: center;
+
+}
+body {
+    
+    background-color: #C9EAF8;
+}
+
+h1{
+    text-align: center;
+}
+
+h1::before,
+h1 ::after{
+    content:"";
+    height: 2px;
+    width: 100vw;
+    background-color: #035172;
+    position: absolute;
+    left: 0;
+    
+}
+
+h1::after{
+    top:33px;
+}
+
+.container {
+    border: 2px solid black;
+    width: 60vw;
+    height: 70vh;
+    top:13vh;
+    left: 20vw;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.sidebar {
+    background-color: #5A8090;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.mainbar {
+    background-color: #7FB6CD;
+}
+
+button,
+label{
+    background-color: #97B4C0;
+    margin-top: 4px;
+}
+
+ul{
+    list-style: none;
+}
+
+button
+ul li{
+    cursor: pointer;
+}
+
+
+.board {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    position: relative;
+    margin-top: 18%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell:first-child,
+:nth-child(2),
+ :nth-child(3) {
+    border-top: none;
+}
+
+.cell:last-child,
+:nth-child(8),
+ :nth-child(7) {
+    border-bottom: none;
+}
+
+.cell:nth-child(3n) {
+    border-right: none;
+}
+
+.cell:nth-child(3n+1) {
+    border-left: none;
+}
+
+.board.circle .cell:not(.cross):not(.circle):hover::after,
+.cell.circle::after{
+    content: '';
+    background-color: #7FB6CD;
+    height: 91px;
+    width: 87px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.board.circle .cell:not(.cross):not(.circle):hover::before,
+.cell.circle::before{
+    content: '';
+    background-color: #035172;
+    height: 97px;
+    width: 93px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.board.cross .cell:not(.circle):not(.cross):hover::after,
+.cell.cross::after{
+    content: '';
+    background-color: #035172;
+    position: absolute;
+    height: 97px;
+    width: 3px;
+    transform: rotate(-45deg);
+}
+
+.board.cross .cell:not(.circle):not(.cross):hover::before,
+.cell.cross::before{
+    content: '';
+    background-color: #035172;
+    position: absolute;
+    height: 97px;
+    width: 3px;
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
